@@ -15,5 +15,6 @@ namespace TennisProStatsv1.Models
         public string Password { get; set; }
         public int UserTypeId { get; set; }
         public UserType UserType { get; set; }
+        public bool IsValid { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace TennisProStatsv1.Utilities
         public static void BuildEmailTemplate(int userId, string userEmail)
         {
             string body = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~/EmailTemplate/") + "Text" + ".cshtml");
-            var url = "http://localhost:54392/" + "PRestaurant/Confirm?regId=" + userId;
+            var url = "http://localhost:54392/" + "SiteUser/Confirm?userId=" + userId;
             body = body.Replace("@ViewBag.ConfirmationLink", url);
             body = body.ToString();
             BuildEmailTemplate("Your Account Is Successfully Created", body, userEmail);

@@ -48,19 +48,34 @@ namespace TennisProStatsv1.Controllers
                     user.Email = registerModel.Email;
                     user.Password = registerModel.Password;
                     user.UserTypeId = (int) CommonThings.UserType.SiteUser;
-
+                    user.IsValid = false;
                     db.SitUsers.Add(user);
                     await db.SaveChangesAsync();
 
-                    Session["Email"] = user.Email;
-                    Session["UserTypeId"] = user.UserTypeId;
                     ViewBag.success = true;
                     CommonThings.BuildEmailTemplate(user.ID,user.Email);
 
+                    Session["Email"] = user.Email;
+                    Session["UserTypeId"] = user.UserTypeId;
                 }
             }
 
             return View(registerModel);
+        }
+
+        public ActionResult Confirm(int userId)
+        {
+            ViewBag.userID = userId;
+            return View();
+        }
+
+        public JsonResult RegisterConfirm(int userId)
+        {
+            var userData = db.SitUsers.Where(x => x.ID == userId).FirstOrDefault();
+            userData.IsValid = true;
+            db.SaveChanges();
+            var msg = "Your email is verified";
+            return Json(msg, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
