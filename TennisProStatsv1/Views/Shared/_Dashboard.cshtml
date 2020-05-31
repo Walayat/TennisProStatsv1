@@ -1,0 +1,208 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item mr-2">
+                        <a class="nav-link btn btn-primary" href="#">LOG IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="#">SIGN UP</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="head_sec">
+        <div class="head_img">
+        </div>
+        <div class="head_data">
+            <div class="container">
+                <div class="avatar">
+                    <div class="header-avatar">
+                        <div class="img-md">
+                            <img alt="Yoda Picks" src="https://cdn.blogabet.com/avatars/753d29277946b0af5a4544efff076359_b.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="tipster">
+                    <h1 class="enable-tooltip" data-original-title="Yoda Picks">Hi, I'm Yoda Picks!</h1>
+
+                    <div class="text-green icons">
+
+                        <span class="fa-stack" data-toggle="tooltip" data-html="true" data-original-title="Blog stats have been reset 3 times.<br>Last reset at 17 Sep 2019.">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <img data-toggle="tooltip" data-original-title="Spain" src="https://cdn.blogabet.com/images/flag/spain.png" alt="Spain">
+                    </div>
+
+                </div>
+                <div class="pins">
+                    <h4>
+                        <span id="header-picks" class="number">1798</span><br>
+                        <span id="header-picks-text">Picks</span>
+                    </h4>
+                    <h4>
+                        <span id="header-profit" class="number text-green">+107</span><br>
+                        <span>Profit</span>
+                    </h4>
+                    <h4>
+                        <span id="header-yield" class="number text-green">+3%</span><br>
+                        <span>Yield</span>
+                    </h4>
+                    <h4>
+                        <span id="header-followers" class="number">6</span><br>
+                        <span id="header-followers-text">Followers</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<style>
+    .navbar {
+        color: #fff !important;
+        background-color: rgba(0,0,0,.3) !important;
+    }
+    .head_sec {
+        position: relative;
+        display: block;
+        min-height: 300px;
+    }
+    .head_img {
+        width: 100%;
+        min-height: 300px;
+        display: block;
+        background-color: #4dbfa2;
+    }
+    .head_data {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        background-color: rgba(0,0,0,.3);
+    }
+    .avatar{
+        position:relative;
+    }
+    .header-avatar {
+        border-radius: 50%;
+        display: inline-block;
+        height: 230px;
+        width: 230px;
+        margin: -115px 0 0 -115px;
+        display: block;
+        border: 5px solid #4dbfa2;
+        position: absolute;
+        left: 50%;
+    }
+    .img-md {
+        border-radius: 50%;
+        height: 220px;
+        width: 220px;
+        border: 3px solid #fff;
+    }
+    .header-avatar img {
+        display: block;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+    .tipster {
+        float: left;
+        width: 40%;
+        position: relative;
+    }
+        .tipster h1 {
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #000;
+            float: left;
+            font-size: 24px;
+            margin-top: 25px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 64%;
+        }
+        .tipster .icons {
+            margin: 22px 0 0 10px;
+            float: left;
+            line-height: 34px;
+        }
+    .text-green {
+        color: #82daca !important;
+    }
+    .fa-stack {
+        position: relative;
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        vertical-align: middle;
+    }
+    .pins {
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px #000;
+        float: right;
+        width: 33%;
+    }
+        .pins h4 {
+            float: left;
+            width: 25%;
+            padding: 14px 0;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+            .pins h4 .number {
+                font-size: 24px;
+                font-weight: 700;
+            }
+</style>
