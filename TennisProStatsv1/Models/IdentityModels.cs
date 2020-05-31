@@ -21,9 +21,12 @@ namespace TennisProStatsv1.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MyTennisProConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<User> SitUsers { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
 
         public static ApplicationDbContext Create()
         {
