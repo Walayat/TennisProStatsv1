@@ -357,6 +357,8 @@
     <Content Include="Views\SiteUser\Register.cshtml" />
     <Content Include="Views\SiteUser\Login.cshtml" />
     <Content Include="Views\SiteUser\Confirm.cshtml" />
+    <Content Include="Views\Shared\_Dashboard.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
