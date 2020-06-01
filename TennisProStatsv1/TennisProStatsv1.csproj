@@ -359,6 +359,8 @@
     <Content Include="Views\SiteUser\Confirm.cshtml" />
     <Content Include="Views\Shared\_Dashboard.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\AccessDenied.cshtml" />
+    <Content Include="Views\SiteUser\_ExternalLoginsListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

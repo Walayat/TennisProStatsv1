@@ -3,16 +3,17 @@
     ViewBag.Title = "Registrarse";
     var successMessage = ViewBag.success;
 }
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <div class="container-fluid fondo-registro">
     <h2>@ViewBag.Title.</h2>
 
     @if (successMessage == true)
     {
-    <div style="display: none" id="show" class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h5>Please check your inbox, we have sent you an confirmation e-mail</h5>
-    </div>
+        <div style="display: none" id="show" class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5>Please check your inbox, we have sent you an confirmation e-mail</h5>
+        </div>
     }
 
     @using (Html.BeginForm("Register", "SiteUser", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -39,6 +40,13 @@
                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
             </div>
         </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"> Fecha de nacimiento</label>
+            <div class="col-md-10">
+                <input type="text" id="datepicker" class="form-control">
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" class="btn btn-primary" value="Registrarse" />
@@ -47,10 +55,30 @@
     }
 </div>
 @section Scripts {
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
         $(function () {
             $('#show').show().fadeOut(20000);
         });
+
+        $(function () {
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1930:2020',
+            });
+        });
+
+        $('#datepicker').change(function () {
+            debugger;
+            var dateValue = $('#datepicker').val();
+            date = dateValue.split("/");
+            var timestamp = (new Date(date[2], date[1] - 1, date[0]));
+            var data = 0;
+        });
+
     </script>
     @Scripts.Render("~/bundles/jqueryval")
 }

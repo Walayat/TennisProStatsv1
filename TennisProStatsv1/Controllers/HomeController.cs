@@ -26,9 +26,32 @@ namespace TennisProStatsv1.Controllers
 
             return View();
         }
-        public ActionResult Dashboard()
-        {          
+
+        public ActionResult AccessDenied()
+        {
+            ViewBag.Message = "Kindly login first to access your dashboard";
             return View();
+        }
+
+        public ActionResult Dashboard()
+        {
+            if (this.islogin())
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("AccessDenied");
+            }
+        }
+
+        public bool islogin()
+        {
+            if (Session["Email"] == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

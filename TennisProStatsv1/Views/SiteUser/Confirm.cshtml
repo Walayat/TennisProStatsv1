@@ -11,7 +11,7 @@
 
 <div class="alert alert-success" style="display:none;" id="moveNext">
     <strong><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp; Account Is Activate, Now You Can Touch With Your Profile</strong>
-    <a href="~/Home/Index" class="button anchor" style="text-decoration:none;">Click to move</a>
+    <a href="~/Home/Dashboard" class="button anchor" style="text-decoration:none;">Click to move</a>
 </div>
 
 <script type="text/javascript">
@@ -24,15 +24,13 @@
             success: function (msg)
             {
                 $('#moveNext').show();
+                $('#confirmAccount').hide();
+
                 alert(msg);
             }
         });
     }
 
-    $(function () {
-        $('#confirmBtn').click(function () {
-            $('#confirmAccount').hide();
-        });
-    });
+
 </script>
 <p style="margin-top:400px;"></p>
