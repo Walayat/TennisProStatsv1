@@ -53,5 +53,9 @@ namespace TennisProStatsv1.Controllers
             }
             return true;
         }
+        public ActionResult AddPicker()
+        {
+            return View();
+        }
     }
 }
