@@ -96,7 +96,6 @@ namespace TennisProStatsv1.Controllers
                 {
                     Session["Email"] = checkCredentials.Email;
                     Session["UserTypeId"] = checkCredentials.UserTypeId;
-
                     return Redirect("~/Home/Dashboard");
                 }
                 else
@@ -121,6 +120,11 @@ namespace TennisProStatsv1.Controllers
             return false;
         }
 
-        
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return Redirect("~/SiteUser/Login");
+        }
+
     }
 }

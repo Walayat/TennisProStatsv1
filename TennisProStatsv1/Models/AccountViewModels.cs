@@ -82,6 +82,7 @@ namespace TennisProStatsv1.Models
         public string ConfirmPassword { get; set; }
         [Required]
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha de nacimiento")]
         public DateTime DOB { get; set; }
     }
 
