@@ -41,7 +41,7 @@
                     @{var sessionData = Session["Email"]; }
                     @if (sessionData != null)
                     {
-                        <li class="nav-item mr-2">@Html.ActionLink("Hello " + sessionData + "!", "DashBoard", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                        <li class="nav-item mr-2">@Html.ActionLink("Hello " + sessionData + "!", "DashBoard", "Home", routeValues: null, htmlAttributes: new { title = "Dashboard" })</li>
                         <li class="nav-item"><a href="~/SiteUser/Logout/">Log Out</a></li>
                     }
                     else
