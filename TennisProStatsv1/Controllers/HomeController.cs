@@ -55,7 +55,14 @@ namespace TennisProStatsv1.Controllers
         }
         public ActionResult AddPicker()
         {
-            return View();
+            if (this.islogin())
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("AccessDenied");
+            }
         }
     }
 }

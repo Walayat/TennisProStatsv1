@@ -13,7 +13,14 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @Html.ActionLink("Menú principal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @if (Session["Email"] != null)
+            {
+                @Html.ActionLink("Tablero", "Dashboard", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            }
+            else
+            {
+                @Html.ActionLink("Menú principal", "Dashboard", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            }
             <div class="navbar-collapse collapse" id="navbarSupportedContent">
 
                 <ul class="nav navbar-nav mr-auto">
