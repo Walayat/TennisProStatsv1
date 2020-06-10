@@ -64,5 +64,11 @@ namespace TennisProStatsv1.Controllers
                 return RedirectToAction("AccessDenied");
             }
         }
+        public ActionResult PindingPicK()
+        {
+           
+                return View();
+           
+        }
     }
 }
